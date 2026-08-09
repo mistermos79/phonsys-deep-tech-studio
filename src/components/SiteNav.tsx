@@ -3,7 +3,7 @@ import { Menu, X, Sun, Moon, Languages } from "lucide-react";
 
 import { useSite } from "@/lib/site-context";
 
-export const navIds = ["expertises", "approche", "contact"] as const;
+export const navIds = ["expertises", "approche", "partenaires", "contact"] as const;
 
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -20,6 +20,7 @@ export function useNavLinks() {
   return [
     { href: "#expertises", label: t.nav.expertises },
     { href: "#approche", label: t.nav.approche },
+    { href: "#partenaires", label: t.nav.partenaires },
     { href: "#contact", label: t.nav.contact },
   ];
 }

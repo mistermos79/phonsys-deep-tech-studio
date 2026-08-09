@@ -14,6 +14,7 @@ import { NeuralCanvas } from "@/components/NeuralCanvas";
 import { SiteNav, Wordmark, useNavLinks } from "@/components/SiteNav";
 import { SiteProvider, useSite } from "@/lib/site-context";
 import mark from "@/assets/phonsys-mark.png.asset.json";
+import kubii from "@/assets/kubii-logo.png.asset.json";
 
 const title = "Phonsys — IA, robotique avancée et automatisation industrielle";
 const description =
@@ -146,6 +147,40 @@ function Page() {
                 </li>
               ))}
             </ol>
+          </div>
+        </section>
+
+        {/* Partenaires */}
+        <section
+          id="partenaires"
+          className="scroll-mt-24 border-b border-border px-5 py-20 md:px-8 md:py-28"
+        >
+          <div className="mx-auto max-w-6xl">
+            <p className="eyebrow">{t.partenaires.eyebrow}</p>
+            <h2 className="mt-4 text-3xl font-bold sm:text-4xl">{t.partenaires.heading}</h2>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+              {t.partenaires.text}
+            </p>
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <a
+                href="https://www.kubii.com/fr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col items-start gap-6 rounded-lg border border-border bg-card p-8 transition-colors hover:bg-card-hover"
+              >
+                <img
+                  src={kubii.url}
+                  alt="Kubii"
+                  className="h-12 w-auto"
+                  width={430}
+                  height={170}
+                  loading="lazy"
+                />
+                <span className="inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors group-hover:text-primary">
+                  {t.partenaires.visit} <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </a>
+            </div>
           </div>
         </section>
 
