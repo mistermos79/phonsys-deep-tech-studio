@@ -15,6 +15,7 @@ import { SiteNav, Wordmark, useNavLinks } from "@/components/SiteNav";
 import { SiteProvider, useSite } from "@/lib/site-context";
 import mark from "@/assets/phonsys-mark.png.asset.json";
 import kubii from "@/assets/kubii-logo.png.asset.json";
+import arduino from "@/assets/arduino-logo.png.asset.json";
 
 const title = "Phonsys — IA, robotique avancée et automatisation industrielle";
 const description =
@@ -162,25 +163,30 @@ function Page() {
               {t.partenaires.text}
             </p>
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              <a
-                href="https://www.kubii.com/fr/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col items-start gap-6 rounded-lg border border-border bg-card p-8 transition-colors hover:bg-card-hover"
-              >
-                <img
-                  src={kubii.url}
-                  alt="Kubii"
-                  className="h-12 w-auto"
-                  width={430}
-                  height={170}
-                  loading="lazy"
-                />
-                <span className="inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors group-hover:text-primary">
-                  {t.partenaires.visit} <ArrowRight className="h-3.5 w-3.5" />
-                </span>
-              </a>
+              {[
+                { href: "https://www.kubii.com/fr/", src: kubii.url, alt: "Kubii" },
+                { href: "https://store.arduino.cc/", src: arduino.url, alt: "Arduino" },
+              ].map((p) => (
+                <a
+                  key={p.alt}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col items-start gap-6 rounded-lg border border-border bg-card p-8 transition-colors hover:bg-card-hover"
+                >
+                  <img
+                    src={p.src}
+                    alt={p.alt}
+                    className="h-12 w-auto"
+                    loading="lazy"
+                  />
+                  <span className="inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-muted-foreground transition-colors group-hover:text-primary">
+                    {t.partenaires.visit} <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
+                </a>
+              ))}
             </div>
+
           </div>
         </section>
 
