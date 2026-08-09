@@ -85,6 +85,14 @@ export const dict: Record<Lang, Dict> = {
           title: "Automatisation & performance",
           text: "Automatisation de processus et pilotage à distance pour gagner en efficacité opérationnelle.",
         },
+        {
+          title: "Agents IA — Plug & Play",
+          text: "Des agents IA pré-entraînés pour la vente, le support, les RH ou la création de contenu. Connectés à vos CRM, mails et Slack, sans code et disponibles 24/7.",
+        },
+        {
+          title: "Chatbots & assistants",
+          text: "Assistants conversationnels entraînés sur vos documents internes, multilingues FR/DE/EN/IT — pour vos clients, vos équipes ou votre site web.",
+        },
       ],
     },
     approche: {
