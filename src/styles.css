@@ -54,6 +54,21 @@
   --border: rgba(255, 255, 255, 0.09);
 }
 
+.light {
+  --background: #f5f7fa;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --card-hover: #edf1f7;
+  --foreground: #0b111d;
+  --muted-foreground: #5a6779;
+  --primary: #2f6ff0;
+  --primary-light: #1c56cc;
+  --primary-foreground: #ffffff;
+  --border: rgba(5, 7, 12, 0.1);
+}
+
+
+
 @layer base {
   * {
     border-color: var(--border);
