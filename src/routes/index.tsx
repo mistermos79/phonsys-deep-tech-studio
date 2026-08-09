@@ -33,7 +33,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const icons = [Brain, Bot, Cpu, Activity];
+const icons = [Brain, Bot, Cpu, Activity, Plug, MessagesSquare];
 const EMAIL = "contact@phonsys.com";
 
 function Index() {
