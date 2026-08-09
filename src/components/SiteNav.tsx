@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon, Languages } from "lucide-react";
 
-export const navLinks = [
-  { href: "#expertises", label: "Expertises" },
-  { href: "#approche", label: "Approche" },
-  { href: "#contact", label: "Contact" },
-];
+import { useSite } from "@/lib/site-context";
+
+export const navIds = ["expertises", "approche", "contact"] as const;
 
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -17,9 +15,47 @@ export function Wordmark({ className = "" }: { className?: string }) {
   );
 }
 
+export function useNavLinks() {
+  const { t } = useSite();
+  return [
+    { href: "#expertises", label: t.nav.expertises },
+    { href: "#approche", label: t.nav.approche },
+    { href: "#contact", label: t.nav.contact },
+  ];
+}
+
+function Toggles({ compact = false }: { compact?: boolean }) {
+  const { theme, lang, t, toggleTheme, toggleLang } = useSite();
+  const btn =
+    "inline-flex h-9 items-center justify-center gap-1.5 rounded-md border border-border px-3 text-xs font-mono uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:bg-card-hover hover:text-foreground";
+  return (
+    <div className={compact ? "flex gap-2" : "flex items-center gap-2"}>
+      <button
+        type="button"
+        onClick={toggleTheme}
+        aria-label={t.ui.toTheme(theme === "dark" ? "light" : "dark")}
+        className={btn}
+      >
+        {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+      </button>
+      <button
+        type="button"
+        onClick={toggleLang}
+        aria-label={t.ui.toLang(lang === "fr" ? "en" : "fr")}
+        className={btn}
+      >
+        <Languages className="h-4 w-4" />
+        {lang === "fr" ? "EN" : "FR"}
+      </button>
+    </div>
+  );
+}
+
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { t } = useSite();
+  const navLinks = useNavLinks();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -46,7 +82,7 @@ export function SiteNav() {
           <Wordmark />
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {navLinks.map((l) => (
             <a
               key={l.href}
@@ -56,22 +92,26 @@ export function SiteNav() {
               {l.label}
             </a>
           ))}
+          <Toggles />
           <a
             href="#contact"
             className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light"
           >
-            Démarrer un projet
+            {t.nav.cta}
           </a>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          aria-label="Ouvrir le menu"
-          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-border text-foreground md:hidden"
-        >
-          <Menu className="h-5 w-5" />
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <Toggles compact />
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            aria-label={t.ui.openMenu}
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border text-foreground"
+          >
+            <Menu className="h-5 w-5" />
+          </button>
+        </div>
       </nav>
 
       <div
@@ -94,7 +134,8 @@ export function SiteNav() {
             <button
               type="button"
               onClick={() => setOpen(false)}
-              aria-label="Fermer le menu"
+              aria-label={t.ui.closeMenu}
+              tabIndex={open ? 0 : -1}
               className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border"
             >
               <X className="h-5 w-5" />
@@ -117,7 +158,7 @@ export function SiteNav() {
             tabIndex={open ? 0 : -1}
             className="mt-6 rounded-md bg-primary px-4 py-3 text-center text-sm font-medium text-primary-foreground"
           >
-            Démarrer un projet
+            {t.nav.cta}
           </a>
         </aside>
       </div>
