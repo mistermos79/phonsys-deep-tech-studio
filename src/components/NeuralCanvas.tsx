@@ -43,16 +43,18 @@ export function NeuralCanvas() {
         if (n.y < 0 || n.y > h) n.vy *= -1;
       }
       for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i]!;
         for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
+          const b = nodes[j]!;
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
           const d2 = dx * dx + dy * dy;
           if (d2 < 19000) {
             ctx.strokeStyle = `rgba(61,127,255,${0.16 * (1 - d2 / 19000)})`;
             ctx.lineWidth = 0.7;
             ctx.beginPath();
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
             ctx.stroke();
           }
         }
