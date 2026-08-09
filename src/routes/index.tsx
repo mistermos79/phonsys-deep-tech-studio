@@ -1,5 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Brain, Bot, Cpu, Activity, ArrowRight, Mail } from "lucide-react";
+import {
+  Brain,
+  Bot,
+  Cpu,
+  Activity,
+  Plug,
+  MessagesSquare,
+  ArrowRight,
+  Mail,
+} from "lucide-react";
 
 import { NeuralCanvas } from "@/components/NeuralCanvas";
 import { SiteNav, Wordmark, useNavLinks } from "@/components/SiteNav";
@@ -24,7 +33,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const icons = [Brain, Bot, Cpu, Activity];
+const icons = [Brain, Bot, Cpu, Activity, Plug, MessagesSquare];
 const EMAIL = "contact@phonsys.com";
 
 function Index() {
@@ -102,7 +111,7 @@ function Page() {
             <h2 className="mt-4 max-w-2xl text-3xl font-bold sm:text-4xl">
               {t.expertises.heading}
             </h2>
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {t.expertises.items.map((e, i) => {
                 const Icon = icons[i]!;
                 return (
