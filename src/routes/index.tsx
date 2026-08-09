@@ -111,7 +111,7 @@ function Page() {
             <h2 className="mt-4 max-w-2xl text-3xl font-bold sm:text-4xl">
               {t.expertises.heading}
             </h2>
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {t.expertises.items.map((e, i) => {
                 const Icon = icons[i]!;
                 return (
