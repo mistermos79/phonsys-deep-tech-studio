@@ -34,6 +34,7 @@ type Dict = {
     heading: string;
     items: { n: string; title: string; text: string }[];
   };
+  partenaires: { eyebrow: string; heading: string; text: string; visit: string };
   contact: { eyebrow: string; heading: string; text: string; cta: string };
   footer: { rights: string };
   ui: {
@@ -49,6 +50,7 @@ export const dict: Record<Lang, Dict> = {
     nav: {
       expertises: "Expertises",
       approche: "Approche",
+      partenaires: "Partenaires",
       contact: "Contact",
       cta: "Démarrer un projet",
     },
@@ -116,6 +118,12 @@ export const dict: Record<Lang, Dict> = {
         },
       ],
     },
+    partenaires: {
+      eyebrow: "Partenaires",
+      heading: "Ils nous accompagnent",
+      text: "Nous collaborons avec des acteurs de référence pour concevoir des systèmes fiables, de la carte électronique jusqu'à la mise en production.",
+      visit: "Visiter le site",
+    },
     contact: {
       eyebrow: "Contact",
       heading: "Un projet en tête ?",
@@ -134,6 +142,7 @@ export const dict: Record<Lang, Dict> = {
     nav: {
       expertises: "Expertise",
       approche: "Approach",
+      partenaires: "Partners",
       contact: "Contact",
       cta: "Start a project",
     },
@@ -200,6 +209,12 @@ export const dict: Record<Lang, Dict> = {
           text: "Production rollout, team training and follow-up to sustain performance over time.",
         },
       ],
+    },
+    partenaires: {
+      eyebrow: "Partners",
+      heading: "Who we work with",
+      text: "We partner with trusted specialists to build reliable systems, from the electronic board to production rollout.",
+      visit: "Visit website",
     },
     contact: {
       eyebrow: "Contact",
