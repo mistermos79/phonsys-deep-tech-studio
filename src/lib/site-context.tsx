@@ -170,6 +170,14 @@ export const dict: Record<Lang, Dict> = {
           title: "Automation & performance",
           text: "Process automation and remote control to increase operational efficiency.",
         },
+        {
+          title: "AI agents — Plug & Play",
+          text: "Pre-trained AI agents for sales, support, HR or content creation. Connected to your CRM, email and Slack, no code required and available 24/7.",
+        },
+        {
+          title: "Chatbots & assistants",
+          text: "Conversational assistants trained on your internal documents, multilingual FR/DE/EN/IT — for your customers, your teams or your website.",
+        },
       ],
     },
     approche: {
