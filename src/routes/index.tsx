@@ -1,5 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Brain, Bot, Cpu, Activity, ArrowRight, Mail } from "lucide-react";
+import {
+  Brain,
+  Bot,
+  Cpu,
+  Activity,
+  Plug,
+  MessagesSquare,
+  ArrowRight,
+  Mail,
+} from "lucide-react";
 
 import { NeuralCanvas } from "@/components/NeuralCanvas";
 import { SiteNav, Wordmark, useNavLinks } from "@/components/SiteNav";
