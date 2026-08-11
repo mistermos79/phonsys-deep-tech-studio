@@ -171,6 +171,7 @@ function Page() {
                 { href: "https://store.arduino.cc/", src: arduino.url, alt: "Arduino" },
                 { href: "https://www.nvidia.com/fr-fr/", src: nvidia.url, alt: "NVIDIA" },
                 { href: "https://claude.ai/", src: claude.url, alt: "Claude AI" },
+                { href: "https://chatgpt.com/", src: chatgpt.url, alt: "ChatGPT" },
               ].map((p) => (
                 <a
                   key={p.alt}
