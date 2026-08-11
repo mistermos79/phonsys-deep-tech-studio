@@ -16,6 +16,7 @@ import { SiteProvider, useSite } from "@/lib/site-context";
 import mark from "@/assets/phonsys-mark.png.asset.json";
 import kubii from "@/assets/kubii-logo.png.asset.json";
 import arduino from "@/assets/arduino-logo.png.asset.json";
+import nvidia from "@/assets/nvidia-logo.png.asset.json";
 
 const title = "Phonsys — IA, robotique avancée et automatisation industrielle";
 const description =
@@ -166,6 +167,7 @@ function Page() {
               {[
                 { href: "https://www.kubii.com/fr/", src: kubii.url, alt: "Kubii" },
                 { href: "https://store.arduino.cc/", src: arduino.url, alt: "Arduino" },
+                { href: "https://www.nvidia.com/fr-fr/", src: nvidia.url, alt: "NVIDIA" },
               ].map((p) => (
                 <a
                   key={p.alt}
