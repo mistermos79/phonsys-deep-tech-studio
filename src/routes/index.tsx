@@ -18,6 +18,7 @@ import kubii from "@/assets/kubii-logo.png.asset.json";
 import arduino from "@/assets/arduino-logo.png.asset.json";
 import nvidia from "@/assets/nvidia-logo.png.asset.json";
 import claude from "@/assets/claude-logo.png.asset.json";
+import chatgpt from "@/assets/chatgpt-logo.png.asset.json";
 
 const title = "Phonsys — IA, robotique avancée et automatisation industrielle";
 const description =
