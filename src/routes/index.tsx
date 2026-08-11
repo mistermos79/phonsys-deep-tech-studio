@@ -173,6 +173,7 @@ function Page() {
                 { href: "https://www.nvidia.com/fr-fr/", src: nvidia.url, alt: "NVIDIA" },
                 { href: "https://claude.ai/", src: claude.url, alt: "Claude AI" },
                 { href: "https://chatgpt.com/", src: chatgpt.url, alt: "ChatGPT" },
+                { href: "https://n8n.io/", src: n8n.url, alt: "n8n" },
               ].map((p) => (
                 <a
                   key={p.alt}
