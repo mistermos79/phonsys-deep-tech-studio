@@ -18,6 +18,7 @@ import kubii from "@/assets/kubii-logo.png.asset.json";
 import arduino from "@/assets/arduino-logo.png.asset.json";
 import nvidia from "@/assets/nvidia-logo.png.asset.json";
 import claude from "@/assets/claude-logo.png.asset.json";
+import chatgpt from "@/assets/chatgpt-logo.png.asset.json";
 
 const title = "Phonsys — IA, robotique avancée et automatisation industrielle";
 const description =
@@ -170,6 +171,7 @@ function Page() {
                 { href: "https://store.arduino.cc/", src: arduino.url, alt: "Arduino" },
                 { href: "https://www.nvidia.com/fr-fr/", src: nvidia.url, alt: "NVIDIA" },
                 { href: "https://claude.ai/", src: claude.url, alt: "Claude AI" },
+                { href: "https://chatgpt.com/", src: chatgpt.url, alt: "ChatGPT" },
               ].map((p) => (
                 <a
                   key={p.alt}
