@@ -14,7 +14,7 @@ import { NeuralCanvas } from "@/components/NeuralCanvas";
 import { SiteNav, Wordmark, useNavLinks } from "@/components/SiteNav";
 import { SiteProvider, useSite } from "@/lib/site-context";
 import mark from "@/assets/phonsys-mark.png.asset.json";
-import markLight from "@/assets/phonsys-mark-light.jpg.asset.json";
+import markLight from "@/assets/phonsys-mark-light-v2.png.asset.json";
 import kubii from "@/assets/kubii-logo.png.asset.json";
 import arduino from "@/assets/arduino-logo.png.asset.json";
 import nvidia from "@/assets/nvidia-logo.png.asset.json";
