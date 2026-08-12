@@ -12,7 +12,14 @@ export type Lang = "fr" | "en";
 export type Theme = "dark" | "light";
 
 type Dict = {
-  nav: { expertises: string; approche: string; partenaires: string; contact: string; cta: string };
+  nav: {
+    expertises: string;
+    tarifications: string;
+    approche: string;
+    partenaires: string;
+    contact: string;
+    cta: string;
+  };
   hero: {
     eyebrow: string;
     titleA: string;
