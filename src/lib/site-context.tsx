@@ -245,6 +245,7 @@ export const dict: Record<Lang, Dict> = {
   en: {
     nav: {
       expertises: "Expertise",
+      tarifications: "Pricing",
       approche: "Approach",
       partenaires: "Partners",
       contact: "Contact",
