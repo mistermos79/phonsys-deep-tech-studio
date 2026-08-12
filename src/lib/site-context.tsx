@@ -79,7 +79,7 @@ export const dict: Record<Lang, Dict> = {
       cta: "Démarrer un projet",
     },
     hero: {
-      eyebrow: "Studio IA · Robotique · Automatisation",
+      eyebrow: "Studio IA · Domotique · Automatisation",
       titleA: "Concevoir aujourd'hui, ",
       titleAccent: "innover",
       titleB: " pour demain.",
@@ -87,7 +87,7 @@ export const dict: Record<Lang, Dict> = {
         "Phonsys conçoit des systèmes d'intelligence artificielle et des solutions robotiques sur mesure, de la recherche jusqu'à la mise en production — pour des entreprises qui veulent des résultats concrets, pas des concepts.",
       ctaPrimary: "Discuter de votre projet",
       ctaSecondary: "Découvrir nos expertises",
-      markers: ["Intelligence artificielle", "Robotique avancée", "Automatisation"],
+      markers: ["Intelligence artificielle", "Domotique IA", "Automatisation"],
       markAlt:
         "Emblème Phonsys : lettres P et S entourées d'un circuit et d'un bras robotisé",
     },
@@ -100,8 +100,8 @@ export const dict: Record<Lang, Dict> = {
           text: "Modèles et algorithmes sur mesure pour automatiser l'analyse, la décision et la prédiction.",
         },
         {
-          title: "Robotique avancée",
-          text: "Conception et intégration de systèmes robotiques adaptés à vos environnements de production.",
+          title: "Domotique boostée IA",
+          text: "Mise en place de la domotique augmentée par l'IA : pilotage intelligent de l'éclairage, du chauffage, de la sécurité et de l'énergie, avec des scénarios qui s'adaptent à vos usages.",
         },
         {
           title: "Conception site web boostée IA",
@@ -252,7 +252,7 @@ export const dict: Record<Lang, Dict> = {
       cta: "Start a project",
     },
     hero: {
-      eyebrow: "AI · Robotics · Automation studio",
+      eyebrow: "AI · Home automation · Automation studio",
       titleA: "Designing today, ",
       titleAccent: "innovating",
       titleB: " for tomorrow.",
@@ -260,7 +260,7 @@ export const dict: Record<Lang, Dict> = {
         "Phonsys builds custom artificial intelligence systems and robotic solutions, from research through to production — for companies that want concrete results, not concepts.",
       ctaPrimary: "Discuss your project",
       ctaSecondary: "Explore our expertise",
-      markers: ["Artificial intelligence", "Advanced robotics", "Automation"],
+      markers: ["Artificial intelligence", "AI home automation", "Automation"],
       markAlt:
         "Phonsys emblem: P and S letters framed by a circuit trace and a robotic arm",
     },
@@ -273,8 +273,8 @@ export const dict: Record<Lang, Dict> = {
           text: "Custom models and algorithms to automate analysis, decision-making and prediction.",
         },
         {
-          title: "Advanced robotics",
-          text: "Design and integration of robotic systems adapted to your production environments.",
+          title: "AI-powered home automation",
+          text: "Smart home and building automation enhanced by AI: intelligent control of lighting, heating, security and energy, with scenarios that adapt to how you live.",
         },
         {
           title: "AI-powered web design",
