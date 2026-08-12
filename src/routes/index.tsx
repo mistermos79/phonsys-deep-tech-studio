@@ -52,7 +52,7 @@ function Index() {
 }
 
 function Page() {
-  const { t, theme } = useSite();
+  const { t } = useSite();
   const navLinks = useNavLinks();
 
   return (
