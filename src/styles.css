@@ -35,36 +35,36 @@
   --color-border: var(--border);
   --color-input: var(--border);
   --color-ring: var(--primary);
-  --font-display: "Sora", system-ui, sans-serif;
-  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: "Roboto", system-ui, sans-serif;
+  --font-sans: "Roboto", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 :root {
   --radius: 0.5rem;
-  --background: #05070c;
-  --surface: #0b111d;
-  --card: #0b111d;
-  --card-hover: #101828;
-  --foreground: #eaedf3;
-  --muted-foreground: #8b96a8;
-  --primary: #3d7fff;
-  --primary-light: #82b4ff;
-  --primary-foreground: #05070c;
-  --border: rgba(255, 255, 255, 0.09);
+  --background: #0a1430;
+  --surface: #101d42;
+  --card: #101d42;
+  --card-hover: #17264f;
+  --foreground: #f2f4f8;
+  --muted-foreground: #a3aec6;
+  --primary: #c9992f;
+  --primary-light: #e6bf63;
+  --primary-foreground: #0a1430;
+  --border: rgba(201, 153, 47, 0.22);
 }
 
 .light {
-  --background: #f5f7fa;
+  --background: #f4f6fa;
   --surface: #ffffff;
   --card: #ffffff;
-  --card-hover: #edf1f7;
-  --foreground: #0b111d;
-  --muted-foreground: #5a6779;
-  --primary: #2f6ff0;
-  --primary-light: #1c56cc;
+  --card-hover: #eef1f7;
+  --foreground: #0a1430;
+  --muted-foreground: #56607a;
+  --primary: #a87c19;
+  --primary-light: #8a6412;
   --primary-foreground: #ffffff;
-  --border: rgba(5, 7, 12, 0.1);
+  --border: rgba(10, 20, 48, 0.12);
 }
 
 
@@ -80,6 +80,12 @@
 
   body {
     background-color: var(--background);
+    background-image: radial-gradient(
+      120% 80% at 80% 0%,
+      color-mix(in oklab, var(--primary) 10%, transparent),
+      transparent 60%
+    );
+    background-attachment: fixed;
     color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
