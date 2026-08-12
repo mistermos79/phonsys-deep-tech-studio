@@ -72,6 +72,7 @@ export const dict: Record<Lang, Dict> = {
   fr: {
     nav: {
       expertises: "Expertises",
+      tarifications: "Tarifications",
       approche: "Approche",
       partenaires: "Partenaires",
       contact: "Contact",
@@ -140,6 +141,86 @@ export const dict: Record<Lang, Dict> = {
           text: "Mise en production, formation des équipes et suivi pour assurer la performance dans la durée.",
         },
       ],
+    },
+    tarifications: {
+      eyebrow: "Tarifications",
+      heading: "Sites vitrines pour artisans & TPE",
+      intro:
+        "Châteaurenard · Avignon · Bouches-du-Rhône / Vaucluse. L'objectif n'est pas seulement un site esthétique : c'est de générer des appels et des demandes de devis, grâce au SEO local et à l'automatisation par IA.",
+      badge: "Recommandé",
+      creation: "Création",
+      monthly: "Abonnement",
+      plans: [
+        {
+          name: "Essentiel",
+          price: "790 – 1 000 € HT",
+          sub: "29 – 49 € HT / mois",
+          who: "Artisan qui démarre",
+          features: ["1 à 3 pages", "Optimisé mobile", "Formulaire de contact", "Fiche Google Maps"],
+        },
+        {
+          name: "Professionnel",
+          price: "1 490 – 1 900 € HT",
+          sub: "49 – 79 € HT / mois",
+          who: "Artisan établi",
+          features: ["5 à 7 pages", "Design sur mesure", "SEO local", "Galerie de réalisations", "Avis clients"],
+          featured: true,
+        },
+        {
+          name: "Premium",
+          price: "2 200 – 3 000 € HT",
+          sub: "79 – 129 € HT / mois",
+          who: "Entreprise locale ambitieuse",
+          features: ["SEO poussé", "Rédaction professionnelle", "Optimisation des conversions", "Suivi & reporting"],
+        },
+        {
+          name: "Premium + IA",
+          price: "2 500 – 4 000 € HT",
+          sub: "99 – 199 € HT / mois",
+          who: "Entreprise qui veut automatiser",
+          features: ["SEO + IA", "Chatbot intelligent", "Qualification des demandes", "Automatisations métier"],
+        },
+      ],
+      recoTitle: "Offre recommandée : « Visibilité Artisan + IA »",
+      recoPrice: "1 490 € HT de création + 69 € HT / mois",
+      recoItems: [
+        {
+          label: "Pages",
+          text: "Accueil, entreprise, prestations, réalisations, zones d'intervention, avis, contact/devis.",
+        },
+        {
+          label: "Conversion",
+          text: "Boutons Appeler et WhatsApp, formulaire de devis et appels à l'action soignés.",
+        },
+        {
+          label: "SEO local",
+          text: "Optimisation sur des recherches type « maçon Châteaurenard » ou « rénovation Avignon ».",
+        },
+        {
+          label: "Google",
+          text: "Optimisation de la fiche Google Business Profile et connexion des outils de mesure.",
+        },
+        {
+          label: "IA",
+          text: "Aide à la rédaction, FAQ intelligente, préqualification des demandes et génération de réponses.",
+        },
+        {
+          label: "Maintenance",
+          text: "Hébergement, sauvegardes, mises à jour et petites modifications selon le forfait.",
+        },
+      ],
+      optionsTitle: "Options facturables en supplément",
+      options: [
+        { label: "Page supplémentaire", price: "100 – 180 € HT" },
+        { label: "Rédaction SEO avancée", price: "250 – 500 € HT" },
+        { label: "Optimisation Google Business Profile", price: "150 – 300 € HT" },
+        { label: "Chatbot IA personnalisé", price: "300 – 800 € HT" },
+        { label: "Automatisation devis / CRM", price: "400 – 1 200 € HT" },
+        { label: "Campagne Google Ads", price: "à partir de 300 € HT + budget publicitaire" },
+        { label: "Photographies professionnelles", price: "sur devis" },
+      ],
+      note: "Plus qu'un site internet : une machine à obtenir des demandes de devis — rapide sur mobile, visible localement, avec appels directs, formulaire intelligent et automatisation IA.",
+      cta: "Demander un devis",
     },
     partenaires: {
       eyebrow: "Partenaires",
