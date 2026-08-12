@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Brain,
   House,
   MonitorSmartphone,
   Activity,
   Plug,
-  MessagesSquare,
   ArrowRight,
   Check,
   Mail,
