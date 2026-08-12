@@ -7,6 +7,7 @@ import {
   Plug,
   MessagesSquare,
   ArrowRight,
+  Check,
   Mail,
 } from "lucide-react";
 
@@ -121,17 +122,130 @@ function Page() {
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {t.expertises.items.map((e, i) => {
                 const Icon = icons[i]!;
+                const body = (
+                  <>
+                    <Icon className="h-6 w-6 text-primary" strokeWidth={1.25} />
+                    <h3 className="mt-5 text-base font-bold">{e.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.text}</p>
+                  </>
+                );
+                if (i === 2) {
+                  return (
+                    <a
+                      key={e.title}
+                      href="#tarifications"
+                      className="group block rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary hover:bg-card-hover"
+                    >
+                      {body}
+                      <span className="mt-5 inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-primary">
+                        {t.nav.tarifications} <ArrowRight className="h-3.5 w-3.5" />
+                      </span>
+                    </a>
+                  );
+                }
                 return (
                   <article
                     key={e.title}
                     className="rounded-lg border border-border bg-card p-6 transition-colors hover:bg-card-hover"
                   >
-                    <Icon className="h-6 w-6 text-primary" strokeWidth={1.25} />
-                    <h3 className="mt-5 text-base font-bold">{e.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.text}</p>
+                    {body}
                   </article>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Tarifications */}
+        <section
+          id="tarifications"
+          className="scroll-mt-24 border-t border-border px-5 py-20 md:px-8 md:py-28"
+        >
+          <div className="mx-auto max-w-6xl">
+            <p className="eyebrow">{t.tarifications.eyebrow}</p>
+            <h2 className="mt-4 max-w-2xl text-3xl font-bold sm:text-4xl">
+              {t.tarifications.heading}
+            </h2>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground">
+              {t.tarifications.intro}
+            </p>
+
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {t.tarifications.plans.map((p) => (
+                <article
+                  key={p.name}
+                  className={`flex flex-col rounded-lg border bg-card p-6 transition-colors ${
+                    p.featured ? "border-primary" : "border-border hover:bg-card-hover"
+                  }`}
+                >
+                  {p.featured && (
+                    <span className="mb-4 inline-flex w-fit rounded-full bg-primary px-3 py-1 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-primary-foreground">
+                      {t.tarifications.badge}
+                    </span>
+                  )}
+                  <h3 className="text-lg font-bold">{p.name}</h3>
+                  <p className="mt-1 text-xs text-muted-foreground">{p.who}</p>
+                  <p className="mt-5 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
+                    {t.tarifications.creation}
+                  </p>
+                  <p className="mt-1 text-xl font-bold text-primary">{p.price}</p>
+                  <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
+                    {t.tarifications.monthly}
+                  </p>
+                  <p className="mt-1 text-sm font-medium">{p.sub}</p>
+                  <ul className="mt-5 space-y-2 border-t border-border pt-5 text-sm text-muted-foreground">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex gap-2">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.5} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-14 grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
+              <div className="rounded-lg border border-border bg-card p-8">
+                <h3 className="text-xl font-bold">{t.tarifications.recoTitle}</h3>
+                <p className="mt-2 font-mono text-sm tracking-[0.1em] text-primary">
+                  {t.tarifications.recoPrice}
+                </p>
+                <dl className="mt-7 grid gap-5 sm:grid-cols-2">
+                  {t.tarifications.recoItems.map((r) => (
+                    <div key={r.label} className="border-t border-border pt-4">
+                      <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary">
+                        {r.label}
+                      </dt>
+                      <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{r.text}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p className="mt-8 border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">
+                  {t.tarifications.note}
+                </p>
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light"
+                >
+                  {t.tarifications.cta} <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="rounded-lg border border-border bg-card p-8">
+                <h3 className="text-base font-bold">{t.tarifications.optionsTitle}</h3>
+                <ul className="mt-6 space-y-4">
+                  {t.tarifications.options.map((o) => (
+                    <li
+                      key={o.label}
+                      className="flex flex-wrap items-baseline justify-between gap-2 border-t border-border pt-4 text-sm"
+                    >
+                      <span className="text-foreground">{o.label}</span>
+                      <span className="font-mono text-xs text-muted-foreground">{o.price}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
