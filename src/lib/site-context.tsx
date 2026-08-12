@@ -266,12 +266,8 @@ export const dict: Record<Lang, Dict> = {
     },
     expertises: {
       eyebrow: "Expertise",
-      heading: "Six fields, one engineering standard.",
+      heading: "Four fields, one engineering standard.",
       items: [
-        {
-          title: "Artificial intelligence",
-          text: "Custom models and algorithms to automate analysis, decision-making and prediction.",
-        },
         {
           title: "AI-powered home automation",
           text: "Smart home and building automation enhanced by AI: intelligent control of lighting, heating, security and energy, with scenarios that adapt to how you live.",
@@ -287,10 +283,6 @@ export const dict: Record<Lang, Dict> = {
         {
           title: "AI agents — Plug & Play",
           text: "Pre-trained AI agents for sales, support, HR or content creation. Connected to your CRM, email and Slack, no code required and available 24/7.",
-        },
-        {
-          title: "Chatbots & assistants",
-          text: "Conversational assistants trained on your internal documents, multilingual FR/DE/EN/IT — for your customers, your teams or your website.",
         },
       ],
     },
