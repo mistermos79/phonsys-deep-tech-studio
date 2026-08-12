@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const icons = [Brain, House, MonitorSmartphone, Activity, Plug, MessagesSquare];
+const icons = [House, MonitorSmartphone, Activity, Plug];
 const EMAIL = "contact@phonsys.com";
 
 function Index() {
