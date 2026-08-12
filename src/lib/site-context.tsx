@@ -144,9 +144,9 @@ export const dict: Record<Lang, Dict> = {
     },
     tarifications: {
       eyebrow: "Tarifications",
-      heading: "Sites vitrines pour artisans & TPE",
+      heading: "Sites web boosté IA",
       intro:
-        "Châteaurenard · Avignon · Bouches-du-Rhône / Vaucluse. L'objectif n'est pas seulement un site esthétique : c'est de générer des appels et des demandes de devis, grâce au SEO local et à l'automatisation par IA.",
+        "L'objectif n'est pas seulement un site esthétique : c'est de générer des appels et des demandes de devis, grâce au SEO local et à l'automatisation par IA.",
       badge: "Recommandé",
       creation: "Création",
       monthly: "Abonnement",
@@ -317,9 +317,9 @@ export const dict: Record<Lang, Dict> = {
     },
     tarifications: {
       eyebrow: "Pricing",
-      heading: "Websites for craftsmen & small businesses",
+      heading: "AI-powered websites",
       intro:
-        "Châteaurenard · Avignon · Bouches-du-Rhône / Vaucluse. The goal isn't just a good-looking website: it's generating calls and quote requests, through local SEO and AI automation.",
+        "The goal isn't just a good-looking website: it's generating calls and quote requests, through local SEO and AI automation.",
       badge: "Recommended",
       creation: "Setup",
       monthly: "Subscription",
