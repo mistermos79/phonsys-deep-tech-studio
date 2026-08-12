@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Brain,
   House,
   MonitorSmartphone,
   Activity,
   Plug,
-  MessagesSquare,
   ArrowRight,
   Check,
   Mail,
@@ -40,7 +38,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const icons = [Brain, House, MonitorSmartphone, Activity, Plug, MessagesSquare];
+const icons = [House, MonitorSmartphone, Activity, Plug];
 const EMAIL = "contact@phonsys.com";
 
 function Index() {
@@ -128,7 +126,7 @@ function Page() {
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.text}</p>
                   </>
                 );
-                if (i === 2) {
+                if (i === 1) {
                   return (
                     <a
                       key={e.title}
