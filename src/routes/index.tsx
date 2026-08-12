@@ -116,7 +116,8 @@ function Page() {
             <h2 className="mt-4 text-3xl font-bold sm:text-4xl lg:whitespace-nowrap lg:text-[clamp(1.75rem,3.4vw,2.6rem)]">
               {t.expertises.heading}
             </h2>
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2">
+
               {t.expertises.items.map((e, i) => {
                 const Icon = icons[i]!;
                 const body = (
