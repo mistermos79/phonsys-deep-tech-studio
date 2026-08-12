@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import {
   Brain,
   Bot,
-  Cpu,
+  MonitorSmartphone,
   Activity,
   Plug,
   MessagesSquare,
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const icons = [Brain, Bot, Cpu, Activity, Plug, MessagesSquare];
+const icons = [Brain, Bot, MonitorSmartphone, Activity, Plug, MessagesSquare];
 const EMAIL = "contact@phonsys.com";
 
 function Index() {

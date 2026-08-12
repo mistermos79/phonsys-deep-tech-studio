@@ -80,8 +80,8 @@ export const dict: Record<Lang, Dict> = {
           text: "Conception et intégration de systèmes robotiques adaptés à vos environnements de production.",
         },
         {
-          title: "Solutions intelligentes",
-          text: "Intégration de puces et de capteurs pour connecter vos équipements et vos données.",
+          title: "Conception site web boostée IA",
+          text: "Sites et interfaces sur mesure, conçus et optimisés avec l'IA : contenus, SEO et performance, du prototype à la mise en ligne.",
         },
         {
           title: "Automatisation & performance",
@@ -172,8 +172,8 @@ export const dict: Record<Lang, Dict> = {
           text: "Design and integration of robotic systems adapted to your production environments.",
         },
         {
-          title: "Smart solutions",
-          text: "Chip and sensor integration to connect your equipment and your data.",
+          title: "AI-powered web design",
+          text: "Custom websites and interfaces designed and optimised with AI: content, SEO and performance, from prototype to launch.",
         },
         {
           title: "Automation & performance",
