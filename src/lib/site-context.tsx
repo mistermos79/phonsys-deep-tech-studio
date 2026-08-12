@@ -93,7 +93,7 @@ export const dict: Record<Lang, Dict> = {
     },
     expertises: {
       eyebrow: "Expertises",
-      heading: "Quatre domaines, une même exigence d'ingénierie.",
+      heading: "Six domaines, une même exigence d'ingénierie.",
       items: [
         {
           title: "Intelligence artificielle",
@@ -266,7 +266,7 @@ export const dict: Record<Lang, Dict> = {
     },
     expertises: {
       eyebrow: "Expertise",
-      heading: "Four fields, one engineering standard.",
+      heading: "Six fields, one engineering standard.",
       items: [
         {
           title: "Artificial intelligence",
