@@ -93,12 +93,8 @@ export const dict: Record<Lang, Dict> = {
     },
     expertises: {
       eyebrow: "Expertises",
-      heading: "Six domaines, une même exigence d'ingénierie.",
+      heading: "Quatre domaines, une même exigence d'ingénierie.",
       items: [
-        {
-          title: "Intelligence artificielle",
-          text: "Modèles et algorithmes sur mesure pour automatiser l'analyse, la décision et la prédiction.",
-        },
         {
           title: "Domotique boostée IA",
           text: "Mise en place de la domotique augmentée par l'IA : pilotage intelligent de l'éclairage, du chauffage, de la sécurité et de l'énergie, avec des scénarios qui s'adaptent à vos usages.",
@@ -114,10 +110,6 @@ export const dict: Record<Lang, Dict> = {
         {
           title: "Agents IA — Plug & Play",
           text: "Des agents IA pré-entraînés pour la vente, le support, les RH ou la création de contenu. Connectés à vos CRM, mails et Slack, sans code et disponibles 24/7.",
-        },
-        {
-          title: "Chatbots & assistants",
-          text: "Assistants conversationnels entraînés sur vos documents internes, multilingues FR/DE/EN/IT — pour vos clients, vos équipes ou votre site web.",
         },
       ],
     },
