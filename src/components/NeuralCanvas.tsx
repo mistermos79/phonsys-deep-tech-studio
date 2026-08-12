@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-type Node = { x: number; y: number; vx: number; vy: number };
+type Node = { x: number; y: number; vx: number; vy: number; r: number; tw: number; ph: number };
 
 export function NeuralCanvas() {
   const ref = useRef<HTMLCanvasElement | null>(null);
@@ -25,16 +25,19 @@ export function NeuralCanvas() {
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.min(90, Math.max(30, Math.round((w * h) / 18000)));
+      const count = Math.min(220, Math.max(70, Math.round((w * h) / 7000)));
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.18,
-        vy: (Math.random() - 0.5) * 0.18,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        r: 0.9 + Math.random() * 1.6,
+        tw: 0.0008 + Math.random() * 0.0022,
+        ph: Math.random() * Math.PI * 2,
       }));
     };
 
-    const draw = () => {
+    const draw = (time = 0) => {
       ctx.clearRect(0, 0, w, h);
       for (const n of nodes) {
         n.x += n.vx;
@@ -50,8 +53,8 @@ export function NeuralCanvas() {
           const dy = a.y - b.y;
           const d2 = dx * dx + dy * dy;
           if (d2 < 19000) {
-            ctx.strokeStyle = `rgba(61,127,255,${0.16 * (1 - d2 / 19000)})`;
-            ctx.lineWidth = 0.7;
+            ctx.strokeStyle = `rgba(201,153,47,${0.3 * (1 - d2 / 19000)})`;
+            ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -59,12 +62,16 @@ export function NeuralCanvas() {
           }
         }
       }
-      ctx.fillStyle = "rgba(130,180,255,0.35)";
+      ctx.shadowColor = "rgba(230,191,99,0.9)";
       for (const n of nodes) {
+        const alpha = 0.45 + 0.45 * Math.sin(time * n.tw + n.ph);
+        ctx.shadowBlur = 6 * alpha;
+        ctx.fillStyle = `rgba(240,214,150,${alpha})`;
         ctx.beginPath();
-        ctx.arc(n.x, n.y, 1.3, 0, Math.PI * 2);
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fill();
       }
+      ctx.shadowBlur = 0;
       raf = requestAnimationFrame(draw);
     };
 
@@ -81,7 +88,7 @@ export function NeuralCanvas() {
     <canvas
       ref={ref}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 h-full w-full opacity-70"
+      className="pointer-events-none absolute inset-0 h-full w-full opacity-100"
     />
   );
 }
