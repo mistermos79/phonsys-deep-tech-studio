@@ -41,6 +41,22 @@ type Dict = {
     heading: string;
     items: { n: string; title: string; text: string }[];
   };
+  tarifications: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    badge: string;
+    creation: string;
+    monthly: string;
+    plans: { name: string; price: string; sub: string; who: string; features: string[]; featured?: boolean }[];
+    recoTitle: string;
+    recoPrice: string;
+    recoItems: { label: string; text: string }[];
+    optionsTitle: string;
+    options: { label: string; price: string }[];
+    note: string;
+    cta: string;
+  };
   partenaires: { eyebrow: string; heading: string; text: string; visit: string };
   contact: { eyebrow: string; heading: string; text: string; cta: string };
   footer: { rights: string };
