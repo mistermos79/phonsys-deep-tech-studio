@@ -44,19 +44,34 @@ type Dict = {
   tarifications: {
     eyebrow: string;
     heading: string;
+    subtitle: string;
     intro: string;
-    badge: string;
-    creation: string;
-    monthly: string;
-    plans: { name: string; price: string; sub: string; who: string; features: string[]; featured?: boolean }[];
-    recoTitle: string;
-    recoPrice: string;
-    recoItems: { label: string; text: string }[];
-    optionsTitle: string;
-    options: { label: string; price: string }[];
-    note: string;
-    cta: string;
+    plans: {
+      id: string;
+      badge: string;
+      name: string;
+      price: string;
+      desc: string;
+      features: string[];
+      cta: string;
+      featured?: boolean;
+    }[];
+    subsHeading: string;
+    subsText: string;
+    subs: { name: string; price: string; badge?: string; features: string[] }[];
+    customTitle: string;
+    customText: string;
+    customCta: string;
+    whyEyebrow: string;
+    whyHeading: string;
+    why: { title: string; text: string }[];
+    finalHeading: string;
+    finalText: string;
+    finalPrimary: string;
+    finalSecondary: string;
+    selectedLabel: string;
   };
+
   partenaires: { eyebrow: string; heading: string; text: string; visit: string };
   contact: { eyebrow: string; heading: string; text: string; cta: string };
   footer: { rights: string };
