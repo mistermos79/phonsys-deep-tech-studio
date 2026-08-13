@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   House,
@@ -7,7 +8,12 @@ import {
   ArrowRight,
   Check,
   Mail,
+  MapPin,
+  Smartphone,
+  Bot,
+  TrendingUp,
 } from "lucide-react";
+
 
 import { NeuralCanvas } from "@/components/NeuralCanvas";
 import { SiteNav, Wordmark, useNavLinks } from "@/components/SiteNav";
@@ -20,9 +26,10 @@ import claude from "@/assets/claude-logo.png.asset.json";
 import chatgpt from "@/assets/chatgpt-logo.png.asset.json";
 import n8n from "@/assets/n8n-logo.png.asset.json";
 
-const title = "Phonsys — IA, robotique avancée et automatisation industrielle";
+const title = "Phonsys — Création de site internet artisan & IA à Avignon";
 const description =
-  "Phonsys conçoit des systèmes d'intelligence artificielle et des solutions robotiques sur mesure, de la recherche jusqu'à la mise en production.";
+  "Phonsys crée des sites internet professionnels pour artisans et entreprises : référencement local à Châteaurenard et Avignon, automatisation et IA pour générer des devis.";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -39,6 +46,7 @@ export const Route = createFileRoute("/")({
 });
 
 const icons = [House, MonitorSmartphone, Activity, Plug];
+const whyIcons = [MapPin, Smartphone, Bot, TrendingUp];
 const EMAIL = "contact@phonsys.com";
 
 function Index() {
@@ -52,6 +60,9 @@ function Index() {
 function Page() {
   const { t } = useSite();
   const navLinks = useNavLinks();
+  const [offer, setOffer] = useState<string | null>(null);
+  const onSelect = (value: string | null) => setOffer(value);
+
 
   return (
     <div id="top" className="min-h-screen bg-background">
@@ -154,44 +165,48 @@ function Page() {
           </div>
         </section>
 
-        {/* Tarifications */}
+        {/* Offres & Tarifs */}
         <section
           id="tarifications"
           className="scroll-mt-24 border-t border-border px-5 py-20 md:px-8 md:py-28"
         >
           <div className="mx-auto max-w-6xl">
             <p className="eyebrow">{t.tarifications.eyebrow}</p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-bold sm:text-4xl">
+            <h2 className="mt-4 max-w-3xl text-3xl font-bold sm:text-4xl">
               {t.tarifications.heading}
             </h2>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground">
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/90 md:text-lg">
+              {t.tarifications.subtitle}
+            </p>
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
               {t.tarifications.intro}
             </p>
 
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid items-start gap-6 lg:grid-cols-3">
               {t.tarifications.plans.map((p) => (
                 <article
-                  key={p.name}
-                  className={`flex flex-col rounded-lg border bg-card p-6 transition-colors ${
-                    p.featured ? "border-primary" : "border-border hover:bg-card-hover"
+                  key={p.id}
+                  className={`flex h-full flex-col rounded-xl border bg-card p-6 transition-colors sm:p-8 ${
+                    p.featured
+                      ? "border-primary shadow-[0_0_0_1px_var(--color-primary)] lg:-mt-4 lg:pb-10"
+                      : "border-border hover:bg-card-hover"
                   }`}
                 >
-                  {p.featured && (
-                    <span className="mb-4 inline-flex w-fit rounded-full bg-primary px-3 py-1 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-primary-foreground">
-                      {t.tarifications.badge}
-                    </span>
-                  )}
-                  <h3 className="text-lg font-bold">{p.name}</h3>
-                  <p className="mt-1 text-xs text-muted-foreground">{p.who}</p>
-                  <p className="mt-5 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
-                    {t.tarifications.creation}
+                  <span
+                    className={`inline-flex w-fit rounded-full px-3 py-1 font-mono text-[0.6rem] uppercase tracking-[0.2em] ${
+                      p.featured
+                        ? "bg-primary text-primary-foreground"
+                        : "border border-border text-muted-foreground"
+                    }`}
+                  >
+                    {p.badge}
+                  </span>
+                  <h3 className="mt-5 text-xl font-bold">{p.name}</h3>
+                  <p className="mt-3 text-2xl font-extrabold text-primary sm:text-[1.7rem]">
+                    {p.price}
                   </p>
-                  <p className="mt-1 text-xl font-bold text-primary">{p.price}</p>
-                  <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
-                    {t.tarifications.monthly}
-                  </p>
-                  <p className="mt-1 text-sm font-medium">{p.sub}</p>
-                  <ul className="mt-5 space-y-2 border-t border-border pt-5 text-sm text-muted-foreground">
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+                  <ul className="mt-6 space-y-2.5 border-t border-border pt-6 text-sm text-muted-foreground">
                     {p.features.map((f) => (
                       <li key={f} className="flex gap-2">
                         <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.5} />
@@ -199,54 +214,102 @@ function Page() {
                       </li>
                     ))}
                   </ul>
+                  <a
+                    href="#contact"
+                    onClick={() => onSelect(`${p.name} — ${p.price}`)}
+                    className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md px-6 py-3.5 text-sm font-medium transition-colors ${
+                      p.featured
+                        ? "bg-primary text-primary-foreground hover:bg-primary-light"
+                        : "border border-border text-foreground hover:bg-card-hover"
+                    }`}
+                  >
+                    {p.cta} <ArrowRight className="h-4 w-4" />
+                  </a>
                 </article>
               ))}
             </div>
 
-            <div className="mt-14 grid gap-5 lg:grid-cols-[1.3fr_0.7fr]">
-              <div className="rounded-lg border border-border bg-card p-8">
-                <h3 className="text-xl font-bold">{t.tarifications.recoTitle}</h3>
-                <p className="mt-2 font-mono text-sm tracking-[0.1em] text-primary">
-                  {t.tarifications.recoPrice}
-                </p>
-                <dl className="mt-7 grid gap-5 sm:grid-cols-2">
-                  {t.tarifications.recoItems.map((r) => (
-                    <div key={r.label} className="border-t border-border pt-4">
-                      <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-primary">
-                        {r.label}
-                      </dt>
-                      <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{r.text}</dd>
+            {/* Abonnements */}
+            <div className="mt-20">
+              <h3 className="text-2xl font-bold sm:text-3xl">{t.tarifications.subsHeading}</h3>
+              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                {t.tarifications.subsText}
+              </p>
+              <div className="mt-10 grid gap-5 md:grid-cols-3">
+                {t.tarifications.subs.map((s) => (
+                  <article
+                    key={s.name}
+                    className={`flex h-full flex-col rounded-xl border bg-card p-6 ${
+                      s.badge ? "border-primary" : "border-border"
+                    }`}
+                  >
+                    <div className="flex flex-wrap items-center gap-3">
+                      <h4 className="text-base font-bold">{s.name}</h4>
+                      {s.badge && (
+                        <span className="rounded-full bg-primary px-3 py-1 font-mono text-[0.55rem] uppercase tracking-[0.2em] text-primary-foreground">
+                          {s.badge}
+                        </span>
+                      )}
                     </div>
-                  ))}
-                </dl>
-                <p className="mt-8 border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">
-                  {t.tarifications.note}
-                </p>
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light"
-                >
-                  {t.tarifications.cta} <ArrowRight className="h-4 w-4" />
-                </a>
+                    <p className="mt-3 text-lg font-bold text-primary">{s.price}</p>
+                    <ul className="mt-5 space-y-2 border-t border-border pt-5 text-sm text-muted-foreground">
+                      {s.features.map((f) => (
+                        <li key={f} className="flex gap-2">
+                          <Check
+                            className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                            strokeWidth={1.5}
+                          />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
               </div>
+            </div>
 
-              <div className="rounded-lg border border-border bg-card p-8">
-                <h3 className="text-base font-bold">{t.tarifications.optionsTitle}</h3>
-                <ul className="mt-6 space-y-4">
-                  {t.tarifications.options.map((o) => (
-                    <li
-                      key={o.label}
-                      className="flex flex-wrap items-baseline justify-between gap-2 border-t border-border pt-4 text-sm"
+            {/* Devis personnalisé */}
+            <div className="mt-14 rounded-xl border border-border bg-card p-8 text-center md:p-10">
+              <h3 className="text-xl font-bold sm:text-2xl">{t.tarifications.customTitle}</h3>
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                {t.tarifications.customText}
+              </p>
+              <a
+                href="#contact"
+                onClick={() => onSelect(null)}
+                className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light sm:w-auto"
+              >
+                {t.tarifications.customCta} <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            {/* Pourquoi Phonsys */}
+            <div className="mt-20">
+              <p className="eyebrow">{t.tarifications.whyEyebrow}</p>
+              <h3 className="mt-4 max-w-3xl text-2xl font-bold sm:text-3xl">
+                {t.tarifications.whyHeading}
+              </h3>
+              <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {t.tarifications.why.map((w, i) => {
+                  const Icon = whyIcons[i]!;
+                  return (
+                    <article
+                      key={w.title}
+                      className="rounded-xl border border-border bg-card p-6 transition-colors hover:bg-card-hover"
                     >
-                      <span className="text-foreground">{o.label}</span>
-                      <span className="font-mono text-xs text-muted-foreground">{o.price}</span>
-                    </li>
-                  ))}
-                </ul>
+                      <Icon className="h-6 w-6 text-primary" strokeWidth={1.25} />
+                      <h4 className="mt-5 font-mono text-[0.7rem] uppercase tracking-[0.2em] text-foreground">
+                        {w.title}
+                      </h4>
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{w.text}</p>
+                    </article>
+                  );
+                })}
               </div>
             </div>
           </div>
         </section>
+
 
         {/* Approche */}
         <section
@@ -311,6 +374,31 @@ function Page() {
           </div>
         </section>
 
+        {/* CTA final */}
+        <section className="border-t border-border px-5 py-20 md:px-8 md:py-24">
+          <div className="mx-auto max-w-4xl rounded-xl border border-primary bg-card p-8 text-center md:p-12">
+            <h2 className="text-2xl font-bold sm:text-3xl">{t.tarifications.finalHeading}</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              {t.tarifications.finalText}
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <a
+                href="#contact"
+                onClick={() => onSelect(null)}
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light"
+              >
+                {t.tarifications.finalPrimary} <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-md border border-border px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-card-hover"
+              >
+                {t.tarifications.finalSecondary}
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Contact */}
         <section id="contact" className="scroll-mt-24 px-5 py-20 md:px-8 md:py-28">
           <div className="mx-auto max-w-3xl text-center">
@@ -319,15 +407,27 @@ function Page() {
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
               {t.contact.text}
             </p>
+            {offer && (
+              <p className="mx-auto mt-6 w-fit rounded-full border border-primary px-4 py-2 text-sm text-foreground">
+                {t.tarifications.selectedLabel} : <strong>{offer}</strong>
+              </p>
+            )}
             <p className="mt-8 font-mono text-sm tracking-[0.12em] text-foreground">{EMAIL}</p>
             <a
-              href={`mailto:${EMAIL}`}
-              className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light"
+              href={
+                offer
+                  ? `mailto:${EMAIL}?subject=${encodeURIComponent(
+                      `${t.tarifications.selectedLabel} : ${offer}`,
+                    )}&body=${encodeURIComponent(`${t.tarifications.selectedLabel} : ${offer}\n\n`)}`
+                  : `mailto:${EMAIL}`
+              }
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light"
             >
               <Mail className="h-4 w-4" /> {t.contact.cta}
             </a>
           </div>
         </section>
+
       </main>
 
       <footer className="border-t border-border px-5 py-10 md:px-8">
