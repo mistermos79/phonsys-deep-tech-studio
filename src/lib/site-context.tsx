@@ -87,7 +87,7 @@ export const dict: Record<Lang, Dict> = {
   fr: {
     nav: {
       expertises: "Expertises",
-      tarifications: "Tarifications",
+      tarifications: "Offres de services",
       approche: "Approche",
       partenaires: "Partenaires",
       contact: "Contact",
@@ -310,7 +310,7 @@ export const dict: Record<Lang, Dict> = {
   en: {
     nav: {
       expertises: "Expertise",
-      tarifications: "Pricing",
+      tarifications: "Services & Pricing",
       approche: "Approach",
       partenaires: "Partners",
       contact: "Contact",
