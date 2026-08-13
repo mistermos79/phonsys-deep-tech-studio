@@ -39,6 +39,7 @@ export const Route = createFileRoute("/")({
 });
 
 const icons = [House, MonitorSmartphone, Activity, Plug];
+const whyIcons = [MapPin, Smartphone, Bot, TrendingUp];
 const EMAIL = "contact@phonsys.com";
 
 function Index() {
@@ -52,6 +53,9 @@ function Index() {
 function Page() {
   const { t } = useSite();
   const navLinks = useNavLinks();
+  const [offer, setOffer] = useState<string | null>(null);
+  const onSelect = (value: string | null) => setOffer(value);
+
 
   return (
     <div id="top" className="min-h-screen bg-background">
