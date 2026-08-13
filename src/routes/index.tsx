@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   House,
@@ -7,7 +8,12 @@ import {
   ArrowRight,
   Check,
   Mail,
+  MapPin,
+  Smartphone,
+  Bot,
+  TrendingUp,
 } from "lucide-react";
+
 
 import { NeuralCanvas } from "@/components/NeuralCanvas";
 import { SiteNav, Wordmark, useNavLinks } from "@/components/SiteNav";
