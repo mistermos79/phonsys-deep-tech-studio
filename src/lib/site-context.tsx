@@ -99,7 +99,7 @@ export const dict: Record<Lang, Dict> = {
       titleAccent: "innover",
       titleB: " pour demain.",
       subtitle:
-        "Phonsys conçoit des systèmes d'intelligence artificielle et des solutions robotiques sur mesure, de la recherche jusqu'à la mise en production — pour des entreprises qui veulent des résultats concrets, pas des concepts.",
+        "Phonsys conçoit des systèmes d'intelligence artificielle et des applications web intégrant l'IA sur mesure, de la recherche jusqu'à la mise en production — pour des entreprises qui veulent des résultats concrets, pas des concepts.",
       ctaPrimary: "Discuter de votre projet",
       ctaSecondary: "Découvrir nos expertises",
       markers: ["Intelligence artificielle", "Domotique IA", "Automatisation"],
@@ -140,7 +140,7 @@ export const dict: Record<Lang, Dict> = {
         {
           n: "02",
           title: "Conception",
-          text: "Développement itératif des modèles IA ou des systèmes robotiques, validés par des tests concrets.",
+          text: "Développement itératif des modèles IA ou des applications web intégrant l'IA, validés par des tests concrets.",
         },
         {
           n: "03",
@@ -296,7 +296,7 @@ export const dict: Record<Lang, Dict> = {
     contact: {
       eyebrow: "Contact",
       heading: "Un projet en tête ?",
-      text: "Décrivez-nous votre besoin en intelligence artificielle, robotique ou automatisation — on revient vers vous rapidement.",
+      text: "Décrivez-nous votre besoin en intelligence artificielle, applications web intégrant l'IA ou automatisation — on revient vers vous rapidement.",
       cta: "Nous écrire",
     },
     footer: { rights: "Tous droits réservés." },
@@ -322,7 +322,7 @@ export const dict: Record<Lang, Dict> = {
       titleAccent: "innovating",
       titleB: " for tomorrow.",
       subtitle:
-        "Phonsys builds custom artificial intelligence systems and robotic solutions, from research through to production — for companies that want concrete results, not concepts.",
+        "Phonsys builds custom artificial intelligence systems and AI-powered web applications, from research through to production — for companies that want concrete results, not concepts.",
       ctaPrimary: "Discuss your project",
       ctaSecondary: "Explore our expertise",
       markers: ["Artificial intelligence", "AI home automation", "Automation"],
@@ -363,7 +363,7 @@ export const dict: Record<Lang, Dict> = {
         {
           n: "02",
           title: "Design",
-          text: "Iterative development of AI models or robotic systems, validated through real-world testing.",
+          text: "Iterative development of AI models or AI-powered web applications, validated through real-world testing.",
         },
         {
           n: "03",
@@ -519,7 +519,7 @@ export const dict: Record<Lang, Dict> = {
     contact: {
       eyebrow: "Contact",
       heading: "Got a project in mind?",
-      text: "Tell us about your artificial intelligence, robotics or automation needs — we'll get back to you quickly.",
+      text: "Tell us about your artificial intelligence, AI-powered web app or automation needs — we'll get back to you quickly.",
       cta: "Email us",
     },
     footer: { rights: "All rights reserved." },
