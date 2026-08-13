@@ -373,6 +373,31 @@ function Page() {
           </div>
         </section>
 
+        {/* CTA final */}
+        <section className="border-t border-border px-5 py-20 md:px-8 md:py-24">
+          <div className="mx-auto max-w-4xl rounded-xl border border-primary bg-card p-8 text-center md:p-12">
+            <h2 className="text-2xl font-bold sm:text-3xl">{t.tarifications.finalHeading}</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              {t.tarifications.finalText}
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <a
+                href="#contact"
+                onClick={() => onSelect(null)}
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light"
+              >
+                {t.tarifications.finalPrimary} <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-md border border-border px-6 py-3.5 text-sm font-medium text-foreground transition-colors hover:bg-card-hover"
+              >
+                {t.tarifications.finalSecondary}
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Contact */}
         <section id="contact" className="scroll-mt-24 px-5 py-20 md:px-8 md:py-28">
           <div className="mx-auto max-w-3xl text-center">
@@ -381,15 +406,27 @@ function Page() {
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
               {t.contact.text}
             </p>
+            {offer && (
+              <p className="mx-auto mt-6 w-fit rounded-full border border-primary px-4 py-2 text-sm text-foreground">
+                {t.tarifications.selectedLabel} : <strong>{offer}</strong>
+              </p>
+            )}
             <p className="mt-8 font-mono text-sm tracking-[0.12em] text-foreground">{EMAIL}</p>
             <a
-              href={`mailto:${EMAIL}`}
-              className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light"
+              href={
+                offer
+                  ? `mailto:${EMAIL}?subject=${encodeURIComponent(
+                      `${t.tarifications.selectedLabel} : ${offer}`,
+                    )}&body=${encodeURIComponent(`${t.tarifications.selectedLabel} : ${offer}\n\n`)}`
+                  : `mailto:${EMAIL}`
+              }
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-light"
             >
               <Mail className="h-4 w-4" /> {t.contact.cta}
             </a>
           </div>
         </section>
+
       </main>
 
       <footer className="border-t border-border px-5 py-10 md:px-8">
