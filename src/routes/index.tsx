@@ -26,9 +26,10 @@ import claude from "@/assets/claude-logo.png.asset.json";
 import chatgpt from "@/assets/chatgpt-logo.png.asset.json";
 import n8n from "@/assets/n8n-logo.png.asset.json";
 
-const title = "Phonsys — IA, robotique avancée et automatisation industrielle";
+const title = "Phonsys — Création de site internet artisan & IA à Avignon";
 const description =
-  "Phonsys conçoit des systèmes d'intelligence artificielle et des solutions robotiques sur mesure, de la recherche jusqu'à la mise en production.";
+  "Phonsys crée des sites internet professionnels pour artisans et entreprises : référencement local à Châteaurenard et Avignon, automatisation et IA pour générer des devis.";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
