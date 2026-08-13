@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Phonsys — IA, robotique et automatisation" },
+      { title: "Phonsys — IA, applications web et automatisation" },
       {
         name: "description",
         content:
-          "Studio deep-tech spécialisé en intelligence artificielle, robotique avancée et automatisation industrielle.",
+          "Studio deep-tech spécialisé en intelligence artificielle, applications web intégrant l'IA et automatisation.",
       },
       { name: "author", content: "Phonsys" },
-      { property: "og:title", content: "Phonsys — IA, robotique et automatisation" },
+      { property: "og:title", content: "Phonsys — IA, applications web et automatisation" },
       {
         property: "og:description",
         content:
-          "Studio deep-tech spécialisé en intelligence artificielle, robotique avancée et automatisation industrielle.",
+          "Studio deep-tech spécialisé en intelligence artificielle, applications web intégrant l'IA et automatisation.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
